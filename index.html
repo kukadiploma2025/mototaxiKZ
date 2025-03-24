@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мото Такси</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Заказ мото такси</h1>
+        <form class="order-form">
+            <label for="address">Ваш адрес</label>
+            <input type="text" id="address" placeholder="Введите адрес" required>
+
+            <label for="destination">Куда</label>
+            <input type="text" id="destination" placeholder="Введите пункт назначения" required>
+
+            <label for="phone">Ваш номер телефона</label>
+            <input type="tel" id="phone" placeholder="Введите номер" required>
+
+            <label for="tariff">Выберите тариф</label>
+            <select id="tariff" required>
+                <option value="">Выберите тариф</option>
+                <option value="3000">Левый берег</option>
+                <option value="2000">Правый берег</option>
+                <option value="4000">Между берегами</option>
+                <option value="5000">За город</option>
+            </select>
+
+            <p class="price">Итоговая цена: <span id="totalPrice">0</span> тг</p>
+
+            <button type="submit">Заказать</button>
+        </form>
+
+        <p class="info">Ожидайте, вам позвонит ближайший мото таксист.</p>
+        <ul>
+            <li>Вам будет предоставлен одноразовые шапочки и шлем для безопасности.</li>
+            <li>Наши водители имеют лицензии и знают ПДД.</li>
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

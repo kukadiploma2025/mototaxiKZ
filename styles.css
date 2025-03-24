@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+h1 {
+    color: #f0a500;
+    margin-bottom: 20px;
+}
+
+.order-form label {
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #ddd;
+}
+
+.order-form input, .order-form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+    background: #2a2a2a;
+    color: white;
+    font-size: 16px;
+}
+
+.order-form select {
+    cursor: pointer;
+}
+
+.price {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #f0a500;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #f0a500;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover {
+    background: #d98d00;
+}
+
+.info {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #bbb;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    text-align: left;
+    padding-left: 10px;
+    margin: 5px 0;
+}
