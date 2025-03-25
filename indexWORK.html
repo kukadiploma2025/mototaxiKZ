@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заявка в мото-такси</title>
+    <link rel="stylesheet" href="styleWORK.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Заявка на работу в мото-такси</h1>
+        <form id="taxiForm">
+            <label for="fullname">ФИО:</label>
+            <input type="text" id="fullname" name="fullname" required>
+
+            <label for="phone">Номер телефона:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="age">Возраст:</label>
+            <input type="number" id="age" name="age" min="18" required>
+
+            <label for="bike">Выберите тип мотоцикла:</label>
+            <select id="bike" name="bike">
+                <option value="Самурай">Самурай</option>
+                <option value="Макси">Макси</option>
+                <option value="Нмакс">Нмакс</option>
+                <option value="Танк">Танк</option>
+                <option value="Другое">Другое</option>
+            </select>
+
+            <div id="otherBikeField" style="display: none;">
+                <label for="otherBike">Укажите модель:</label>
+                <input type="text" id="otherBike" name="otherBike">
+            </div>
+
+            <label>
+                <input type="checkbox" id="responsibility" required>
+                Несу полную ответственность, включая уголовную, в случае гибели или причинения вреда клиенту.
+            </label>
+
+            <label>
+                <input type="checkbox" id="license" required>
+                Подтверждаю, что у меня есть категория прав на управление мото/мопедом, мото на учете и есть госномер.
+            </label>
+
+            <button type="submit">Отправить заявку</button>
+        </form>
+    </div>
+
+    <script src="scriptWORK.js"></script>
+</body>
+</html>
