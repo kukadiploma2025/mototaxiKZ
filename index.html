@@ -57,8 +57,9 @@
             display: inline-block;
             white-space: nowrap;
             color: #ff0000;
-            font-size: 32px; /* Увеличиваем размер шрифта */
-            animation: marquee 30s linear infinite; /* Увеличиваем время анимации */
+            font-size: 18px; /* Уменьшаем размер шрифта для мобильных */
+            animation: marquee 15s linear infinite; /* Уменьшаем время анимации */
+            transform: translateX(100%); /* Начинаем текст за экраном */
         }
 
         /* Анимация прокрутки текста слева направо (бесконечный цикл) */
