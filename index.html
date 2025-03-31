@@ -30,6 +30,27 @@
             color: #ff0000;
             margin-bottom: 20px;
         }
+        .marquee {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            margin: 20px 0;
+        }
+        .marquee span {
+            position: absolute;
+            white-space: nowrap;
+            color: red;
+            font-size: 18px;
+            animation: marquee 20s linear infinite;
+        }
+        @keyframes marquee {
+            0% {
+                left: 100%;
+            }
+            100% {
+                left: -100%;
+            }
+        }
         .instagram {
             margin-top: 20px;
             font-size: 16px;
@@ -54,6 +75,11 @@
         <div class="message">
             Приносим свои извинения, сервис временно недоступен.<br>
             Технические работы сайта!
+        </div>
+
+        <!-- Длинный ТЕКСТ с датой -->
+        <div class="marquee">
+            <span>С 01.04.2025 с 00:00 во всех городах Республики Казахстан ведется некорректная работа сайта, и временно недоступна услуга вызова мото таксиста. Пожалуйста, следите за обновлениями!</span>
         </div>
         
         <div class="footer">
