@@ -5,41 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мото Такси</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .logo {
+            font-size: 48px;
+            font-weight: bold;
+            color: #00ff00;
+            margin-bottom: 20px;
+        }
+        .message {
+            font-size: 24px;
+            color: #ff0000;
+            margin-bottom: 20px;
+        }
+        .instagram {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #ff007f;
+            text-decoration: none;
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            text-align: center;
+        }
+        .partners {
+            margin-top: 5px;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1>Заказ мото такси</h1>
-        <form class="order-form">
-            <label for="address">Ваш адрес</label>
-            <input type="text" id="address" placeholder="Введите адрес" required>
-
-            <label for="destination">Куда</label>
-            <input type="text" id="destination" placeholder="Введите пункт назначения" required>
-
-            <label for="phone">Ваш номер телефона</label>
-            <input type="tel" id="phone" placeholder="Введите номер" required>
-
-            <label for="tariff">Выберите тариф</label>
-            <select id="tariff" required>
-                <option value="">Выберите тариф</option>
-                <option value="3000">Левый берег</option>
-                <option value="2000">Правый берег</option>
-                <option value="4000">Между берегами</option>
-                <option value="5000">За город</option>
-            </select>
-
-            <p class="price">Итоговая цена: <span id="totalPrice">0</span> тг</p>
-
-            <button type="submit">Заказать</button>
-        </form>
-
-        <p class="info">Ожидайте, вам позвонит ближайший мото таксист.</p>
-        <ul>
-            <li>Вам будет предоставлен одноразовые шапочки и шлем для безопасности.</li>
-            <li>Наши водители имеют лицензии и знают ПДД.</li>
-        </ul>
+        <div class="logo">МОТО ТАКСИ</div>
+        
+        <div class="message">
+            Приносим свои извинения, сервис временно недоступен.<br>
+            Технические работы сайта!
+        </div>
+        
+        <div class="footer">
+            <a href="https://instagram.com/mototaxi.astana" target="_blank" class="instagram">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 40px; height: 40px; vertical-align: middle;"> Подпишитесь, чтобы не пропустить важную информацию
+            </a>
+            <p class="partners">Все права защищены 2025.</p>
+        </div>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
