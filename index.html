@@ -11,7 +11,12 @@
             color: #ffffff;
             text-align: center;
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
         }
+
+        /* Контейнер для всей страницы */
         .container {
             display: flex;
             flex-direction: column;
@@ -19,49 +24,68 @@
             justify-content: center;
             height: 100vh;
         }
+
+        /* Логотип */
         .logo {
             font-size: 48px;
             font-weight: bold;
             color: #00ff00;
             margin-bottom: 20px;
         }
+
+        /* Текст сообщения "Приносим извинения" */
         .message {
             font-size: 24px;
             color: #ff0000;
             margin-bottom: 20px;
         }
-        .marquee {
+
+        /* Стиль для контейнера прокручивающего текста */
+        .marquee-container {
             width: 100%;
             overflow: hidden;
-            position: relative;
-            margin: 20px 0;
+            background-color: #121212;
+            position: fixed;
+            top: 20%; /* Смещаем ближе к центру */
+            left: 0;
+            z-index: 100;
+            padding: 10px 0;
         }
-        .marquee span {
-            position: absolute;
+
+        /* Стиль для прокручиваемого текста */
+        .marquee {
+            display: inline-block;
             white-space: nowrap;
-            color: red;
-            font-size: 18px;
-            animation: marquee 20s linear infinite;
+            color: #ff0000;
+            font-size: 32px; /* Увеличиваем размер шрифта */
+            animation: marquee 30s linear infinite; /* Увеличиваем время анимации */
         }
+
+        /* Анимация прокрутки текста слева направо (бесконечный цикл) */
         @keyframes marquee {
             0% {
-                left: 100%;
+                transform: translateX(100%); /* Начинаем с правой стороны */
             }
             100% {
-                left: -100%;
+                transform: translateX(-100%); /* Заканчиваем за левой стороной */
             }
         }
+
+        /* Стиль для Instagram-ссылки */
         .instagram {
             margin-top: 20px;
             font-size: 16px;
             color: #ff007f;
             text-decoration: none;
         }
+
+        /* Футер с правами */
         .footer {
             position: absolute;
             bottom: 20px;
             text-align: center;
         }
+
         .partners {
             margin-top: 5px;
             font-size: 14px;
@@ -69,19 +93,21 @@
     </style>
 </head>
 <body>
+    <!-- Длинный ТЕКСТ с датой вверху -->
+    <div class="marquee-container">
+        <span class="marquee">С 01.04.2025 с 00:00 во всех городах Республики Казахстан ведется некорректная работа сайта, и временно недоступна услуга вызова мото таксиста. Пожалуйста, следите за обновлениями!</span>
+    </div>
+
     <div class="container">
+        <!-- Логотип -->
         <div class="logo">МОТО ТАКСИ</div>
         
+        <!-- Текст с извинениями -->
         <div class="message">
             Приносим свои извинения, сервис временно недоступен.<br>
             Технические работы сайта!
         </div>
 
-        <!-- Длинный ТЕКСТ с датой -->
-        <div class="marquee">
-            <span>С 01.04.2025 с 00:00 во всех городах Республики Казахстан ведется некорректная работа сайта, и временно недоступна услуга вызова мото таксиста. Пожалуйста, следите за обновлениями!</span>
-        </div>
-        
         <div class="footer">
             <a href="https://instagram.com/mototaxi.astana" target="_blank" class="instagram">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 40px; height: 40px; vertical-align: middle;"> Подпишитесь, чтобы не пропустить важную информацию
