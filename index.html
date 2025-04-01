@@ -11,12 +11,7 @@
             color: #ffffff;
             text-align: center;
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
         }
-
-        /* Контейнер для всей страницы */
         .container {
             display: flex;
             flex-direction: column;
@@ -24,97 +19,99 @@
             justify-content: center;
             height: 100vh;
         }
-
-        /* Логотип */
         .logo {
             font-size: 48px;
             font-weight: bold;
             color: #00ff00;
             margin-bottom: 20px;
         }
-
-        /* Текст сообщения "Приносим извинения" */
-        .message {
-            font-size: 24px;
-            color: #ff0000;
-            margin-bottom: 20px;
+        .order-btn, .driver-btn {
+            padding: 15px 30px;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 8px;
+            margin-bottom: 15px;
         }
-
-        /* Стиль для контейнера прокручивающего текста */
-        .marquee-container {
-            width: 100%;
-            overflow: hidden;
-            background-color: #121212;
-            position: fixed;
-            top: 20%; /* Смещаем ближе к центру */
-            left: 0;
-            z-index: 100;
-            padding: 10px 0;
+        .order-btn {
+            background-color: #00ff00;
+            color: #000;
+            animation: pulse 1.5s infinite alternate;
         }
-
-        /* Стиль для прокручиваемого текста */
-        .marquee {
-            display: inline-block;
-            white-space: nowrap;
-            color: #ff0000;
-            font-size: 18px; /* Уменьшаем размер шрифта для мобильных */
-            animation: marquee 15s linear infinite; /* Уменьшаем время анимации */
-            transform: translateX(100%); /* Начинаем текст за экраном */
+        .driver-btn {
+            background-color: #007bff;
+            color: #fff;
         }
-
-        /* Анимация прокрутки текста слева направо (бесконечный цикл) */
-        @keyframes marquee {
-            0% {
-                transform: translateX(100%); /* Начинаем с правой стороны */
-            }
-            100% {
-                transform: translateX(-100%); /* Заканчиваем за левой стороной */
-            }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
         }
-
-        /* Стиль для Instagram-ссылки */
-        .instagram {
-            margin-top: 20px;
-            font-size: 16px;
-            color: #ff007f;
-            text-decoration: none;
-        }
-
-        /* Футер с правами */
         .footer {
             position: absolute;
             bottom: 20px;
             text-align: center;
         }
-
+        .instagram {
+            color: #ff007f;
+            text-decoration: none;
+            font-size: 16px;
+        }
         .partners {
             margin-top: 5px;
             font-size: 14px;
         }
+        .closed-message {
+            font-size: 24px;
+            color: #ff0000;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
-    <!-- Длинный ТЕКСТ с датой вверху -->
-    <div class="marquee-container">
-        <span class="marquee">С 01.04.2025 с 00:00 во всех городах Республики Казахстан ведется некорректная работа сайта, и временно недоступна услуга вызова мото таксиста. Пожалуйста, следите за обновлениями!</span>
-    </div>
-
-    <div class="container">
-        <!-- Логотип -->
+    <div class="container" id="content">
         <div class="logo">МОТО ТАКСИ</div>
         
-        <!-- Текст с извинениями -->
-        <div class="message">
-            Приносим свои извинения, сервис временно недоступен.<br>
-            Технические работы сайта!
-        </div>
-
-        <div class="footer">
-            <a href="https://instagram.com/mototaxi.astana" target="_blank" class="instagram">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 40px; height: 40px; vertical-align: middle;"> Подпишитесь, чтобы не пропустить важную информацию
-            </a>
-            <p class="partners">Все права защищены 2025.</p>
-        </div>
+        <a href="indexclient.html">
+            <button class="order-btn">ЗАКАЗАТЬ МОТО-ТАКСИ!</button>
+        </a>
+        
+        <a href="indexWORK.html">
+            <button class="driver-btn">СТАТЬ ВОДИТЕЛЕМ МОТО-ТАКСИ</button>
+        </a>
     </div>
+
+    <div class="container" id="closed-message" style="display: none;">
+        <div class="logo">МОТО ТАКСИ</div>
+        <div class="closed-message">
+            ГРАФИК РАБОТЫ СЕРВИСА: <br> 
+            с 08:00 до 20:00 по времени Казахстана (UTC+5)
+        </div>
+        <a href="https://instagram.com/mototaxi.astana" target="_blank" class="instagram">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 40px; height: 40px; vertical-align: middle;"> Подпишитесь, чтобы не пропустить важную информацию
+        </a>
+    </div>
+
+    <script>
+        function checkTime() {
+            let now = new Date();
+            let hours = now.getUTCHours() + 5; // UTC+5 для Казахстана
+
+            if (hours >= 4 && hours < 20) {
+                // Показать основной контент
+                document.getElementById("content").style.display = "flex";
+                document.getElementById("closed-message").style.display = "none";
+            } else {
+                // Показать сообщение о закрытом сервисе
+                document.getElementById("content").style.display = "none";
+                document.getElementById("closed-message").style.display = "flex";
+            }
+        }
+
+        // Проверяем время сразу при загрузке страницы
+        checkTime();
+
+        // Проверяем время каждую минуту
+        setInterval(checkTime, 60000); 
+    </script>
 </body>
 </html>
