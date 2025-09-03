@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Закрытие мото сезона 2025 — Астана</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #111;
+      color: #fff;
+      text-align: center;
+    }
+    h1 {
+      font-size: 1.4rem;
+      margin: 20px 10px;
+    }
+
+    /* Слайдер */
+    .slider {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      position: relative;
+      aspect-ratio: 1 / 1; /* квадрат */
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .slider img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      opacity: 0;
+      animation: fade 6s infinite;
+    }
+    .slider img:nth-child(1) {
+      animation-delay: 0s;
+    }
+    .slider img:nth-child(2) {
+      animation-delay: 3s;
+    }
+
+    @keyframes fade {
+      0%   { opacity: 0; }
+      5%   { opacity: 1; }
+      45%  { opacity: 1; }
+      50%  { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 20px auto;
+      padding: 12px 20px;
+      background: #ff6600;
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #e65500;
+    }
+    .location {
+      margin: 25px auto;
+      max-width: 400px;
+      background: #222;
+      padding: 12px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+    .location img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .location a {
+      display: inline-block;
+      margin-top: 8px;
+      color: #00aced;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .location a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      margin: 40px 0 20px;
+      font-size: 0.9rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Закрытие мото сезона 2025 г. Астана</h1>
+
+  <!-- Слайдер -->
+  <div class="slider">
+    <img src="poster1.jpg" alt="Афиша 1">
+    <img src="poster2.jpg" alt="Афиша 2">
+  </div>
+
+  <a href="https://go.2gis.com/djdEB" class="btn">Просмотреть весь маршрут</a>
+
+  <!-- Локация 1 -->
+  <div class="location">
+    <img src="location1.jpg" alt="Локация 1">
+    <p>СБОР КОЛОННЫ </p>
+    Парковка Республикалық бас мешіт</p>
+    <a href="https://2gis.kz/astana/geo/70030076612420666/71.416215,51.079298" target="_blank">Открыть в 2ГИС</a>
+  </div>
+
+  <!-- Локация 2 -->
+  <div class="location">
+    <img src="location2.jpg" alt="Локация 2">
+    <p>After Party Bla Bla Bar Astana</p>
+    <a href="https://2gis.kz/astana/geo/70000001060362555" target="_blank">Открыть в 2ГИС</a>
+  </div>
+
+  <!-- Локация 3 -->
+  <div class="location">
+    <img src="location3.jpg" alt="Локация 3">
+    <p>Jagalau</p>
+    <a href="https://2gis.kz/astana/geo/70000001086836908/71.718645,51.100558" target="_blank">Открыть в 2ГИС</a>
+  </div>
+
+  <footer>
+    © Закрытие мотосезона 2025 — Астана
+  </footer>
+
+</body>
+</html>
